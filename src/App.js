@@ -1,15 +1,20 @@
-import logo from './logo.png';
-import './App.css';
+import './App.css'
+import { useState } from 'react'
+import Header from './components/Header/Header'
+import Content from './components/Content/Content'
+import Main from './pages/Main/Main'
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Welcome to the Kics Scan Editor</p>
-      </header>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Content>
+        <Main />
+      </Content>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
