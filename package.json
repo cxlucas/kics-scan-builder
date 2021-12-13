@@ -33,6 +33,15 @@
     "lint:fix": "eslint --fix --ext .js,.jsx src",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
