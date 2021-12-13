@@ -1,0 +1,21 @@
+.title {
+    color: #fff;
+    font-weight: 500;
+    font-size: xx-large;
+}
+
+.header {
+    background-color: #9C4CF5;
+}
+
+.headerDiv {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: x-large;
+    }
+}
