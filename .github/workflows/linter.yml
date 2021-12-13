@@ -1,13 +1,15 @@
-name: Deploy to Github Pages
+name: Application Lint
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
 
   workflow_dispatch:
 
 jobs:
-  build_deploy:
+  build_linter:
     runs-on: ubuntu-latest
     
     strategy:
@@ -17,13 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install & Build
+      - name: Build & Run Lint
         run: |
           npm ci
           npm run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: gh-pages
-          folder: build
+          npm run lint
