@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Kics Scan Builder is an online GUI Tool for building Kics scan commands.
+
+The purpose of this tool is to decrease the Kics complexity, as a CLI tool, it can be difficult for developers to know all the flags used to perform complex scans.
 
 ## Available Scripts
 
