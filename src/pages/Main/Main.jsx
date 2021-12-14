@@ -5,7 +5,6 @@ import MainStep1 from './MainSteps/MainStep1'
 import MainStep2 from './MainSteps/MainStep2'
 import MainStep3 from './MainSteps/MainStep3'
 import MainStep4 from './MainSteps/MainStep4'
-import MainStep5 from './MainSteps/MainStep5'
 import MainStepFinish from './MainSteps/MainStepFinish'
 
 const Main = () => {
@@ -25,10 +24,6 @@ const Main = () => {
     {
       title: 'Scan Features',
       content: <MainStep4 />
-    },
-    {
-      title: 'General Features',
-      content: <MainStep5 />
     },
     {
       title: 'Finish',

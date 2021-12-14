@@ -1,6 +1,7 @@
 import Box from '../../../components/Box/Box'
 import RadioGroup from '../../../components/RadioGroup/RadioGroup'
 import Input from '../../../components/Input/Input'
+import SelectMult from '../../../components/SelectMult/SelectMult'
 
 const MainStep1 = () => {
   return (
@@ -34,7 +35,16 @@ const MainStep1 = () => {
             {
               flag: 'path',
               flagAux: 'local',
-              label: 'File(s) / Folder(s)'
+              label: 'File(s) / Folder(s)',
+              children: (
+                <SelectMult
+                  flag="path"
+                  flagAux="local"
+                  placeholder={'Add one or more files or folders (complete path)'}
+                  label={'Files / Folders'}
+                  description={'Example: c:\\scansfile1.tf - c:\\scans\\folder'}
+                />
+              )
             },
             {
               flag: 'path',
