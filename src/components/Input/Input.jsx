@@ -4,9 +4,9 @@ import { InfoCircleOutlined } from '@ant-design/icons'
 import { MainContext } from '../../context/MainContext'
 import { useContext } from 'react'
 
-const Input = ({ flag, flagAux, label, placeholder, description }) => {
+const Input = ({ flag, flagAux, label, placeholder, description, defaultValue = '' }) => {
   const { state, dispatch } = useContext(MainContext)
-  const defaultValue = state.data.filter(
+  const defaultContext = state.data.filter(
     (item) => item.flag === flag && item.flagAux === item.flagAux
   )[0]
 
@@ -22,7 +22,9 @@ const Input = ({ flag, flagAux, label, placeholder, description }) => {
           placeholder={placeholder}
           style={{ width: '80%' }}
           onChange={onChange}
-          defaultValue={defaultValue ? defaultValue.value : null}
+          defaultValue={
+            defaultContext && defaultContext?.value ? defaultContext.value : defaultValue
+          }
         />
         <Tooltip title="More Info">
           <Button
