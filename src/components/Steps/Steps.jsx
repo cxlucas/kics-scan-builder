@@ -34,22 +34,30 @@ const Steps = ({ stepsList }) => {
         </Row>
       </div>
 
-      <div className="steps-action">
-        {current < stepsList.length - 1 && (
-          <Button type="primary" onClick={() => next()}>
-            Next
-          </Button>
-        )}
-        {current === stepsList.length - 1 && (
-          <Button type="primary" onClick={() => message.success('Processing complete!')}>
-            Done
-          </Button>
-        )}
-        {current > 0 && (
-          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-            Previous
-          </Button>
-        )}
+      <div className={styles.stepsAction}>
+        <div className={styles.stepsAction}>
+          {current > 0 && (
+            <Button className={styles.button} onClick={() => prev()}>
+              Previous Step
+            </Button>
+          )}
+
+          {current < stepsList.length - 1 && (
+            <Button className={styles.button} type="primary" onClick={() => next()}>
+              Next Step
+            </Button>
+          )}
+        </div>
+        <Button
+          className={styles.buttonFinish}
+          type="primary"
+          disabled={current === stepsList.length - 1}
+          onClick={() => {
+            onChange(stepsList.length - 1)
+            message.success('Processing complete!')
+          }}>
+          Finish
+        </Button>
       </div>
     </>
   )

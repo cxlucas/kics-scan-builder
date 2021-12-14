@@ -7,35 +7,43 @@ const MainStep1 = () => {
     <>
       <Box title="Kics Source">
         <RadioGroup
+          flag="source"
           items={[
             {
               label: 'Local',
-              value: 'local',
+              flag: 'source',
+              flagAux: 'local',
               children: (
                 <Input
+                  flag="source"
+                  flagAux="local"
                   placeholder={'KICS Binary complete path'}
                   label={'Kics Path'}
                   description={'Example: c:\\kics\\1.4.7\\kics.exe'}
                 />
               )
             },
-            { label: 'Docker', value: 'docker' }
+            { label: 'Docker', flag: 'source', flagAux: 'docker' }
           ]}
         />
       </Box>
       <Box title="Target Scan">
         <RadioGroup
-          defaultIndex={1}
+          flag="path"
           items={[
             {
-              label: 'File(s) / Folder(s)',
-              value: 'files'
+              flag: 'path',
+              flagAux: 'local',
+              label: 'File(s) / Folder(s)'
             },
             {
+              flag: 'path',
+              flagAux: 'git',
               label: 'Git Repository',
-              value: 'git',
               children: (
                 <Input
+                  flag="path"
+                  flagAux="git"
                   placeholder={'Repository URL'}
                   label={'Repository URL'}
                   description={'Example: https://github.com/Checkmarx/kics'}
@@ -43,10 +51,13 @@ const MainStep1 = () => {
               )
             },
             {
+              flag: 'path',
+              flagAux: 'remote',
               label: 'Remote URL (http/https)',
-              value: 'remote',
               children: (
                 <Input
+                  flag="path"
+                  flagAux="remote"
                   placeholder={'File URL'}
                   label={'File URL'}
                   description={'Example: https://example.com/project-source.zip'}
@@ -59,16 +70,21 @@ const MainStep1 = () => {
 
       <Box title="Queries Location">
         <RadioGroup
+          flag="queries-path"
           items={[
             {
-              label: 'Default (same as Kics source)',
-              value: 'default'
+              flag: 'queries-path',
+              flagAux: 'default',
+              label: 'Default (same as Kics source)'
             },
             {
+              flag: 'queries-path',
+              flagAux: 'local',
               label: 'Custom Location (Local Folder)',
-              value: 'folder',
               children: (
                 <Input
+                  flag={'queries-path'}
+                  flagAux={'local'}
                   placeholder={'Queries Assets Complete Path'}
                   label={'Query Assets'}
                   description={'Example: C:\\kics\\1.4.7\\assets'}
@@ -76,10 +92,13 @@ const MainStep1 = () => {
               )
             },
             {
+              flag: 'queries-path',
+              flagAux: 'git',
               label: 'Git Repository',
-              value: 'git',
               children: (
                 <Input
+                  flag={'queries-path'}
+                  flagAux={'git'}
                   placeholder={'Repository URL'}
                   label={'Repository URL'}
                   description={'Example: https://github.com/Checkmarx/kics'}
@@ -87,10 +106,13 @@ const MainStep1 = () => {
               )
             },
             {
+              flag: 'queries-path',
+              flagAux: 'remote',
               label: 'Remote URL (http/https)',
-              value: 'remote',
               children: (
                 <Input
+                  flag={'queries-path'}
+                  flagAux={'remote'}
                   placeholder={'File URL'}
                   label={'File URL'}
                   description={'Example: https://example.com/project-source.zip'}
