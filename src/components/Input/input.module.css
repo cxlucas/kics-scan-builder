@@ -1,0 +1,20 @@
+.inputContainer {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputDescriptionDiv {
+    display: flex;
+    margin-top: 0.2em;
+    justify-content: center;
+}
+
+.inputDescriptionText {
+    font-style: italic;
+}
