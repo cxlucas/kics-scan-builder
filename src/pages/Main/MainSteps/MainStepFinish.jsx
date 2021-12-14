@@ -10,7 +10,8 @@ const MainStepFinish = () => {
       {state.data.length > 0 &&
         state.data.map((item) => (
           <div key={item.flag}>
-            <b>{item.flag}</b>: {item.value} <i>{item.flagAux && `(${item.flagAux})`}</i>
+            <b>{item.flag}</b>: {Array.isArray(item.value) ? item.value.join(',') : item.value}{' '}
+            <i>{item.flagAux && `(${item.flagAux})`}</i>
           </div>
         ))}
     </div>

@@ -4,6 +4,7 @@ import { Row, Col } from 'antd'
 import Steps from '../../components/Steps/Steps'
 import MainStep1 from './MainSteps/MainStep1'
 import MainStep2 from './MainSteps/MainStep2'
+import MainStep3 from './MainSteps/MainStep3'
 import MainStepFinish from './MainSteps/MainStepFinish'
 
 const Main = () => {
@@ -14,19 +15,19 @@ const Main = () => {
     },
     {
       title: 'Output Files',
-      content: <MainStep2 step={3} />
+      content: <MainStep2 />
     },
     {
       title: 'Output CLI',
-      content: <MainStep2 step={4} />
+      content: <MainStep3 step={3} />
     },
     {
       title: 'Scan Features',
-      content: <MainStep2 step={5} />
+      content: <MainStep3 step={4} />
     },
     {
       title: 'General Features',
-      content: <MainStep2 step={6} />
+      content: <MainStep3 step={5} />
     },
     {
       title: 'Finish',
