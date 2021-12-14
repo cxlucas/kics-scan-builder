@@ -1,10 +1,11 @@
 import React from 'react'
-//import styles from './main.module.css'
 import { Row, Col } from 'antd'
 import Steps from '../../components/Steps/Steps'
 import MainStep1 from './MainSteps/MainStep1'
 import MainStep2 from './MainSteps/MainStep2'
 import MainStep3 from './MainSteps/MainStep3'
+import MainStep4 from './MainSteps/MainStep4'
+import MainStep5 from './MainSteps/MainStep5'
 import MainStepFinish from './MainSteps/MainStepFinish'
 
 const Main = () => {
@@ -19,15 +20,15 @@ const Main = () => {
     },
     {
       title: 'Output CLI',
-      content: <MainStep3 step={3} />
+      content: <MainStep3 />
     },
     {
       title: 'Scan Features',
-      content: <MainStep3 step={4} />
+      content: <MainStep4 />
     },
     {
       title: 'General Features',
-      content: <MainStep3 step={5} />
+      content: <MainStep5 />
     },
     {
       title: 'Finish',

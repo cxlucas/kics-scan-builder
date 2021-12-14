@@ -1,7 +1,7 @@
-const MainStep3 = ({ step = 3 }) => {
+const MainStep3 = () => {
   return (
     <div style={{ minHeight: '200px' }}>
-      <span>Step {step}</span>
+      <span>Step 3</span>
     </div>
   )
 }
