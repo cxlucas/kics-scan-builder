@@ -1,6 +1,7 @@
 import Box from '../../../components/Box/Box'
 import RadioGroup from '../../../components/RadioGroup/RadioGroup'
 import Input from '../../../components/Input/Input'
+import CheckGroup from '../../../components/CheckGroup/CheckGroup'
 
 const MainStep4 = () => {
   return (
