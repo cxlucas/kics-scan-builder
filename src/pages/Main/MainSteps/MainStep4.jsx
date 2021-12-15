@@ -5,7 +5,7 @@ import CheckGroup from '../../../components/CheckGroup/CheckGroup'
 
 const MainStep4 = () => {
   return (
-    <>   
+    <>
       <Box title="Exclude Severities">
         <CheckGroup
           flag="exclude-severities"
