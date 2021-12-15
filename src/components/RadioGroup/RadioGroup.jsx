@@ -25,7 +25,10 @@ const RadioGroup = ({ flag, items, defaultIndex = 0 }) => {
     setValue(e.target.value)
     const item = items.filter((item) => itemUniqueID(item.flag, item.flagAux) === e.target.value)[0]
     if (item) {
-      dispatch({ type: 'ADD', data: { flag: item.flag, value: '', flagAux: item.flagAux } })
+      dispatch({
+        type: 'ADD',
+        data: { flag: item.flag, value: '', flagAux: item.flagAux, required: item?.required }
+      })
     }
   }
 

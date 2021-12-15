@@ -4,14 +4,25 @@ import { InfoCircleOutlined } from '@ant-design/icons'
 import { MainContext } from '../../context/MainContext'
 import { useContext } from 'react'
 
-const Input = ({ flag, flagAux, label, placeholder, description, defaultValue = '' }) => {
+const Input = ({
+  flag,
+  flagAux,
+  label,
+  placeholder,
+  description,
+  defaultValue = '',
+  required = false
+}) => {
   const { state, dispatch } = useContext(MainContext)
   const defaultContext = state.data.filter(
     (item) => item.flag === flag && item.flagAux === item.flagAux
   )[0]
 
   const onChange = (e) => {
-    dispatch({ type: 'ADD', data: { flag: flag, value: e.target.value, flagAux: flagAux } })
+    dispatch({
+      type: 'ADD',
+      data: { flag: flag, value: e.target.value, flagAux: flagAux, required: required }
+    })
   }
 
   return (

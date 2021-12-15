@@ -2,13 +2,9 @@ import { createContext } from 'react'
 
 export const initialState = {
   data: [
-    { flag: 'source', value: '', flagAux: 'local' },
-    { flag: 'path', value: '', flagAux: 'local' },
-    { flag: 'queries-path', value: '', flagAux: 'default' },
-    { flag: 'minimal-ui', value: '', flagAux: 'disable' },
-    { flag: 'no-progress', value: '', flagAux: 'disable' },
-    { flag: 'no-color', value: '', flagAux: 'disable' },
-    { flag: 'custom', value: '', flagAux: 'default' }
+    { flag: 'source', value: '', flagAux: 'local', required: true },
+    { flag: 'path', value: '', flagAux: 'local', required: true },
+    { flag: 'queries-path', value: '', flagAux: 'default', required: true }
   ]
 }
 

@@ -14,7 +14,6 @@ const MainStep2 = () => {
             { label: 'PDF', value: 'pdf' },
             { label: 'HTML', value: 'html' },
             { label: 'SARIF (JSON)', value: 'sarif' },
-            { label: 'JUNIT', value: 'junit' },
             { label: 'SONARQUBE', value: 'sonarqube' },
             { label: 'GLSAST', value: 'glsast' }
           ]}

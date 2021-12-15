@@ -1,0 +1,19 @@
+.errorTag {
+    color: red;
+}
+
+.actionDiv {
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.buttonCopy {
+    width: 50%;
+}
+
+.buttonDownload {
+    width: 50%;
+}

@@ -4,11 +4,22 @@ import { InfoCircleOutlined } from '@ant-design/icons'
 import { MainContext } from '../../context/MainContext'
 import { useContext } from 'react'
 
-const SelectMult = ({ flag, flagAux, label, placeholder, description, defaultValue = [] }) => {
+const SelectMult = ({
+  flag,
+  flagAux,
+  label,
+  placeholder,
+  description,
+  defaultValue = [],
+  required = false
+}) => {
   const { state, dispatch } = useContext(MainContext)
 
   const onChange = (selectionList) => {
-    dispatch({ type: 'ADD', data: { flag: flag, value: selectionList, flagAux: flagAux } })
+    dispatch({
+      type: 'ADD',
+      data: { flag: flag, value: selectionList, flagAux: flagAux, required: required }
+    })
   }
 
   const defaultContext = state.data.filter(

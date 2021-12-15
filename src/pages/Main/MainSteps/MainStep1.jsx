@@ -14,17 +14,19 @@ const MainStep1 = () => {
               label: 'Local',
               flag: 'source',
               flagAux: 'local',
+              required: true,
               children: (
                 <Input
                   flag="source"
                   flagAux="local"
+                  required={true}
                   placeholder={'KICS Binary complete path'}
                   label={'Kics Path'}
                   description={'Example: c:\\kics\\1.4.7\\kics.exe'}
                 />
               )
             },
-            { label: 'Docker', flag: 'source', flagAux: 'docker' }
+            { label: 'Docker', flag: 'source', flagAux: 'docker', required: true }
           ]}
         />
       </Box>
@@ -36,10 +38,12 @@ const MainStep1 = () => {
               flag: 'path',
               flagAux: 'local',
               label: 'File(s) / Folder(s)',
+              required: true,
               children: (
                 <SelectMult
                   flag="path"
                   flagAux="local"
+                  required={true}
                   placeholder={'Add one or more files or folders (complete path)'}
                   label={'Files / Folders'}
                   description={'Example: c:\\scansfile1.tf - c:\\scans\\folder'}
@@ -49,28 +53,16 @@ const MainStep1 = () => {
             {
               flag: 'path',
               flagAux: 'git',
+              required: true,
               label: 'Git Repository',
               children: (
                 <Input
                   flag="path"
                   flagAux="git"
+                  required={true}
                   placeholder={'Repository URL'}
                   label={'Repository URL'}
                   description={'Example: https://github.com/Checkmarx/kics'}
-                />
-              )
-            },
-            {
-              flag: 'path',
-              flagAux: 'remote',
-              label: 'Remote URL (http/https)',
-              children: (
-                <Input
-                  flag="path"
-                  flagAux="remote"
-                  placeholder={'File URL'}
-                  label={'File URL'}
-                  description={'Example: https://example.com/project-source.zip'}
                 />
               )
             }
@@ -90,11 +82,14 @@ const MainStep1 = () => {
             {
               flag: 'queries-path',
               flagAux: 'local',
+              required: true,
               label: 'Custom Location (Local Folder)',
+
               children: (
                 <Input
                   flag={'queries-path'}
                   flagAux={'local'}
+                  required={true}
                   placeholder={'Queries Assets Complete Path'}
                   label={'Query Assets'}
                   description={'Example: C:\\kics\\1.4.7\\assets'}
@@ -104,28 +99,16 @@ const MainStep1 = () => {
             {
               flag: 'queries-path',
               flagAux: 'git',
+              required: true,
               label: 'Git Repository',
               children: (
                 <Input
                   flag={'queries-path'}
                   flagAux={'git'}
+                  required={true}
                   placeholder={'Repository URL'}
                   label={'Repository URL'}
                   description={'Example: https://github.com/Checkmarx/kics'}
-                />
-              )
-            },
-            {
-              flag: 'queries-path',
-              flagAux: 'remote',
-              label: 'Remote URL (http/https)',
-              children: (
-                <Input
-                  flag={'queries-path'}
-                  flagAux={'remote'}
-                  placeholder={'File URL'}
-                  label={'File URL'}
-                  description={'Example: https://example.com/project-source.zip'}
                 />
               )
             }

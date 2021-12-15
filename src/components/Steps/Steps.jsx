@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Steps as AntSteps, Button, message } from 'antd'
+import { Steps as AntSteps, Button } from 'antd'
 import styles from './steps.module.css'
 import { Row } from 'antd'
 
@@ -52,10 +52,7 @@ const Steps = ({ stepsList }) => {
           className={styles.buttonFinish}
           type="primary"
           disabled={current === stepsList.length - 1}
-          onClick={() => {
-            onChange(stepsList.length - 1)
-            message.success('Processing complete!')
-          }}>
+          onClick={() => onChange(stepsList.length - 1)}>
           Finish
         </Button>
       </div>
