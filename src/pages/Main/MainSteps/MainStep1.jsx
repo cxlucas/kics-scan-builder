@@ -65,22 +65,6 @@ const MainStep1 = () => {
                   description={'Example: https://github.com/Checkmarx/kics'}
                 />
               )
-            },
-            {
-              flag: 'path',
-              flagAux: 'remote',
-              required: true,
-              label: 'Remote URL (http/https)',
-              children: (
-                <Input
-                  flag="path"
-                  flagAux="remote"
-                  required={true}
-                  placeholder={'File URL'}
-                  label={'File URL'}
-                  description={'Example: https://example.com/project-source.zip'}
-                />
-              )
             }
           ]}
         />
@@ -125,22 +109,6 @@ const MainStep1 = () => {
                   placeholder={'Repository URL'}
                   label={'Repository URL'}
                   description={'Example: https://github.com/Checkmarx/kics'}
-                />
-              )
-            },
-            {
-              flag: 'queries-path',
-              flagAux: 'remote',
-              required: true,
-              label: 'Remote URL (http/https)',
-              children: (
-                <Input
-                  flag={'queries-path'}
-                  flagAux={'remote'}
-                  required={true}
-                  placeholder={'File URL'}
-                  label={'File URL'}
-                  description={'Example: https://example.com/project-source.zip'}
                 />
               )
             }

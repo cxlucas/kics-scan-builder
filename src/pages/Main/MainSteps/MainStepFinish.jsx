@@ -97,11 +97,9 @@ const MainStepFinish = () => {
         return null
       }
 
-      // 5. Check if the flag is an URL (git or http)
+      // 5. Check if the flag is an URL (git)
       if (item.flagAux === 'git') {
         return kicsOutput.push(`--${item.flag} git::${item.value}`)
-      } else if (item.flagAux === 'remote') {
-        return kicsOutput.push(`--${item.flag} ${item.value}`)
       }
 
       // 6. Check if the flag is an array or string
