@@ -4,20 +4,15 @@ import Input from '../../../components/Input/Input'
 
 const MainStep4 = () => {
   return (
-    <>
+    <>   
       <Box title="Exclude Severities">
-        <RadioGroup
+        <CheckGroup
           flag="exclude-severities"
-          defaultIndex={0}
           items={[
-            {
-              label: 'Info',
-              flag: 'exclude-severities',
-              flagAux: 'info'
-            },
-            { label: 'Low', flag: 'exclude-severities', flagAux: 'low' },
-            { label: 'Medium', flag: 'exclude-severities', flagAux: 'medium' },
-            { label: 'High', flag: 'exclude-severities', flagAux: 'high' }
+            { label: 'Info', value: 'info' },
+            { label: 'Low', value: 'low' },
+            { label: 'Medium', value: 'medium' },
+            { label: 'High', value: 'high' }
           ]}
         />
       </Box>
