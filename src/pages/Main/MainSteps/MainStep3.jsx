@@ -8,6 +8,7 @@ const MainStep3 = () => {
       <Box title="Minimal UI">
         <RadioGroup
           flag="minimal-ui"
+          defaultIndex={1}
           items={[
             {
               label: 'Enable',
@@ -21,6 +22,7 @@ const MainStep3 = () => {
       <Box title="No Progress">
         <RadioGroup
           flag="no-progress"
+          defaultIndex={1}
           items={[
             {
               label: 'Enable',
@@ -39,11 +41,11 @@ const MainStep3 = () => {
             {
               label: 'Enable',
               flag: 'preview-lines',
-              flagAux: 'enable',
+              flagAux: null,
               children: (
                 <Input
                   flag="preview-lines"
-                  flagAux="enable"
+                  flagAux={null}
                   placeholder={'Number of lines to be display in CLI results (min: 1, max: 30)'}
                   label={'Nº of Lines'}
                   description={'Number of lines to be display in CLI results (min: 1, max: 30)'}
@@ -58,6 +60,7 @@ const MainStep3 = () => {
       <Box title="No Color">
         <RadioGroup
           flag="no-color"
+          defaultIndex={1}
           items={[
             {
               label: 'Enable',
@@ -70,23 +73,24 @@ const MainStep3 = () => {
       </Box>
       <Box title="Output Style">
         <RadioGroup
-          flag="custom"
+          flag="custom-cli-01"
+          defaultIndex={0}
           items={[
             {
-              flag: 'custom',
+              flag: 'custom-cli-01',
+              flagAux: 'default',
+              label: 'Default'
+            },
+            {
+              flag: 'custom-cli-01',
               flagAux: 'silent',
               label: 'Silent'
             },
             {
-              flag: 'custom',
+              flag: 'custom-cli-01',
               flagAux: 'verbose',
               label: 'Verbose'
             },
-            {
-              flag: 'custom',
-              flagAux: 'default',
-              label: 'Default'
-            }
           ]}
         />
       </Box>
