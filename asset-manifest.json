@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kics-scan-builder/static/css/main.0dd3ac0c.chunk.css",
-    "main.js": "/kics-scan-builder/static/js/main.a157e674.chunk.js",
-    "main.js.map": "/kics-scan-builder/static/js/main.a157e674.chunk.js.map",
+    "main.js": "/kics-scan-builder/static/js/main.d52df270.chunk.js",
+    "main.js.map": "/kics-scan-builder/static/js/main.d52df270.chunk.js.map",
     "runtime-main.js": "/kics-scan-builder/static/js/runtime-main.a0734fd9.js",
     "runtime-main.js.map": "/kics-scan-builder/static/js/runtime-main.a0734fd9.js.map",
     "static/css/2.0ce74623.chunk.css": "/kics-scan-builder/static/css/2.0ce74623.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.0ce74623.chunk.css",
     "static/js/2.f590f043.chunk.js",
     "static/css/main.0dd3ac0c.chunk.css",
-    "static/js/main.a157e674.chunk.js"
+    "static/js/main.d52df270.chunk.js"
   ]
 }
