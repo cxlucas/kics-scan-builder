@@ -4,7 +4,7 @@ export const initialState = {
   data: [
     { flag: 'source', value: '', flagAux: 'local', required: true },
     { flag: 'path', value: '', flagAux: 'local', required: true },
-    { flag: 'queries-path', value: '', flagAux: 'default', required: true },
+    { flag: 'queries-path', value: '', flagAux: 'default', required: true }
   ]
 }
 

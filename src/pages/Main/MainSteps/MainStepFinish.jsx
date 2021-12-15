@@ -133,24 +133,24 @@ const MainStepFinish = () => {
               <Button
                 className={styles.buttonCopy}
                 type="primary"
-                size='large'
+                size="large"
                 icon={<CopyOutlined />}
                 onClick={() => {
                   navigator.clipboard.writeText(result.join(' '))
                   message.success('Kics Command copied to clipboard!')
                 }}>
                 Copy to clipboard
-            </Button>
-            <Button
+              </Button>
+              <Button
                 className={styles.buttonDownload}
                 type="outline"
                 icon={<DownloadOutlined />}
-                size='large'
+                size="large"
                 onClick={() => {
                   message.loading('Starting download...')
                 }}>
                 Download Scan Config
-            </Button>
+              </Button>
             </div>
           </>
         ) : (

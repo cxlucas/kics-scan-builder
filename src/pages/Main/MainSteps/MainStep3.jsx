@@ -90,7 +90,7 @@ const MainStep3 = () => {
               flag: 'custom-cli-01',
               flagAux: 'verbose',
               label: 'Verbose'
-            },
+            }
           ]}
         />
       </Box>
