@@ -17,17 +17,17 @@ const MainStep4 = () => {
           ]}
         />
       </Box>
-      <Box title="Include Bill of Materials">
+      <Box title="Include Bill of Materials (BoM)">
         <RadioGroup
           flag="bom"
           defaultIndex={1}
           items={[
             {
-              label: 'Enable',
+              label: 'Yes',
               flag: 'bom',
               flagAux: 'enable'
             },
-            { label: 'Disable', flag: 'bom', flagAux: 'disable' }
+            { label: 'No', flag: 'bom', flagAux: 'disable' }
           ]}
         />
       </Box>
@@ -42,7 +42,7 @@ const MainStep4 = () => {
               flagAux: 'enable',
               children: (
                 <Input
-                  flag="preview-lines"
+                  flag="timeout"
                   flagAux={null}
                   placeholder={'number of seconds the query has to execute before being canceled'}
                   label={'Nº of Seconds'}
@@ -61,11 +61,11 @@ const MainStep4 = () => {
           defaultIndex={1}
           items={[
             {
-              label: 'Enable',
+              label: 'Yes',
               flag: 'disable-secrets',
               flagAux: 'enable'
             },
-            { label: 'Disable', flag: 'disable-secrets', flagAux: 'disable' }
+            { label: 'No', flag: 'disable-secrets', flagAux: 'disable' }
           ]}
         />
       </Box>
@@ -75,11 +75,11 @@ const MainStep4 = () => {
           defaultIndex={1}
           items={[
             {
-              label: 'Enable',
+              label: 'Yes',
               flag: 'disable-full-descriptions',
               flagAux: 'enable'
             },
-            { label: 'Disable', flag: 'disable-full-descriptions', flagAux: 'disable' }
+            { label: 'No', flag: 'disable-full-descriptions', flagAux: 'disable' }
           ]}
         />
       </Box>
