@@ -12,7 +12,11 @@ const AppHeader = () => {
         <img src={logo} className="App-logo" alt="logo" style={{ maxHeight: '48px' }} />
         <span className={styles.title}>Kics Scan Builder</span>
       </div>
-      <a href="https://github.com/cxlucas/kics-scan-builder" target='_blank' rel="noopener noreferrer" className={styles.headerDiv}>
+      <a
+        href="https://github.com/cxlucas/kics-scan-builder"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.headerDiv}>
         <GithubOutlined className={styles.githubIcon} />
       </a>
     </Header>
