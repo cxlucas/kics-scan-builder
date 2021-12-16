@@ -6,12 +6,21 @@
 
 .header {
     background-color: #9C4CF5;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .headerDiv {
     display: flex;
     align-items: center;
     gap: 2em;
+}
+
+.githubIcon {
+    font-size: 40px;
+    color: #fff;
 }
 
 @media screen and (max-width: 600px) {
