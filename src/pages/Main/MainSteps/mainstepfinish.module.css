@@ -2,16 +2,26 @@
     color: red;
 }
 
+.blockDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.blockDiv span {
+    margin-left: 0.1em;
+    margin-bottom: 0.5em;
+}
+
 .actionDiv {
     width: 100%;
-    margin-top: 1em;
     display: flex;
     justify-content: space-between;
     gap: 1em;
 }
 
-.buttonCopy {
-    width: 50%;
+.actionTitle {
+    font-size: 1.1em;
+    margin-left: 0.1em;
 }
 
 .buttonDownload {

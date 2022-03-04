@@ -10,22 +10,6 @@ const MainStep1 = () => {
         <RadioGroup
           flag="source"
           items={[
-            {
-              label: 'Local',
-              flag: 'source',
-              flagAux: 'local',
-              required: true,
-              children: (
-                <Input
-                  flag="source"
-                  flagAux="local"
-                  required={true}
-                  placeholder={'KICS Binary complete path'}
-                  label={'Kics Path'}
-                  description={'Example: c:\\kics\\1.4.7\\kics.exe'}
-                />
-              )
-            },
             { label: 'Docker', flag: 'source', flagAux: 'docker', required: true }
           ]}
         />
@@ -37,7 +21,7 @@ const MainStep1 = () => {
             {
               flag: 'path',
               flagAux: 'local',
-              label: 'File(s) / Folder(s)',
+              label: 'Local File(s) / Folder(s)',
               required: true,
               children: (
                 <SelectMult
@@ -46,7 +30,7 @@ const MainStep1 = () => {
                   required={true}
                   placeholder={'Add one or more files or folders (complete path)'}
                   label={'Files / Folders'}
-                  description={'Example: c:\\scansfile1.tf - c:\\scans\\folder'}
+                  description={'Example: c:\\sample.tf (single file)  •  c:\\scans\\project-folder (folder)  •  /home/user/project (folder)'}
                 />
               )
             },
@@ -92,7 +76,7 @@ const MainStep1 = () => {
                   required={true}
                   placeholder={'Queries Assets Complete Path'}
                   label={'Query Assets'}
-                  description={'Example: C:\\kics\\1.4.7\\assets'}
+                  description={'Example: c:\\kics\\1.4.7\\assets'}
                 />
               )
             },
