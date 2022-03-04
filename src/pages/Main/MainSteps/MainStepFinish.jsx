@@ -63,9 +63,7 @@ const MainStepFinish = () => {
     sortedData.push(data.find((item) => item.flag === 'queries-path'))
     sortedData.push(data.find((item) => item.flag === 'output-path'))
     sortedData = sortedData.filter((item) => item)
-    sortedData = sortedData.concat(
-      data.filter((item) => !FLAGS_WITH_PATH.includes(item.flag))
-    )
+    sortedData = sortedData.concat(data.filter((item) => !FLAGS_WITH_PATH.includes(item.flag)))
     return sortedData
   }
 
@@ -73,27 +71,29 @@ const MainStepFinish = () => {
   const replacePathFlagsToDockerPattern = (data, commonPath) => {
     const setPathPattern = (path) => path.replace(/[\\]/g, '/')
     const setDockerPatternToPath = (path) => path.replace(commonPath, DOCKER_PATH)
-    
+
     data.forEach((flag) => {
       if (FLAGS_WITH_PATH.includes(flag.flag) && flag.flagAux === 'local') {
         if (Array.isArray(flag.value))
-          flag.value = flag.value.map((path) => setPathPattern(path.toLowerCase())).map((path) => setDockerPatternToPath(path))
-        else
-          flag.value = setDockerPatternToPath(setPathPattern(flag.value.toLowerCase()))
-      } 
+          flag.value = flag.value
+            .map((path) => setPathPattern(path.toLowerCase()))
+            .map((path) => setDockerPatternToPath(path))
+        else flag.value = setDockerPatternToPath(setPathPattern(flag.value.toLowerCase()))
+      }
     })
     return data
   }
-  
+
   const getCommonPath = (data) => {
     const getPathFlagsValues = data
-      .filter((data) => FLAGS_WITH_PATH.includes(data.flag) && data.value && data.flagAux === 'local') // filter only flags with value
+      .filter(
+        (data) => FLAGS_WITH_PATH.includes(data.flag) && data.value && data.flagAux === 'local'
+      ) // filter only flags with value
       .map((data) => data.value) // map only value (string or array)
       .flat() // flatten array
       .map((path) => path.toLowerCase().replace(/[\\]/g, '/')) // replace \ to / (to generate the same pattern)
 
-    if (getPathFlagsValues.length === 0)
-      return { isCommonPath: true, commonPath: '' }
+    if (getPathFlagsValues.length === 0) return { isCommonPath: true, commonPath: '' }
 
     const commonPath = getPathFlagsValues[0].split('/')[0]
     const isCommonPath = getPathFlagsValues.every((path) => path.split('/')[0] === commonPath)
@@ -105,7 +105,7 @@ const MainStepFinish = () => {
 
     // Sort flags by pretty order
     const sortedFlags = sortFlags(lodash.cloneDeep(state.data))
-    
+
     // Check if all provided paths are valid (must have a common root folder, such as c:\ or /home)
     const { isCommonPath, commonPath } = getCommonPath(sortedFlags)
     if (!isCommonPath) {
@@ -170,73 +170,72 @@ const MainStepFinish = () => {
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '2em' }}>
       <div>
         {errorList.length === 0 ? (
-            <Row gutter={[16, 8]} className={styles.container}>
-              <Col xs={24}>
-                <h3>Kics Command (Generated Output)</h3>
-                <Divider />
-              </Col>
-              <Col xs={24}>
-                <span className={styles.actionTitle}><b>Complete Command</b> (pull latest kics image & run kics scan)</span>
-                <div className={styles.actionDiv}>
-                <TextArea
-                  showCount
-                  style={{ width: '100%' }}
-                  value={result.join(' ')}
-                  readOnly
-                />
-                <Button
-                    type="primary"
-                    size="large"
-                    style={{ maxWidth: '15em' }}
-                    icon={<CopyOutlined />}
-                    onClick={() => {
-                      navigator.clipboard.writeText(result.join(' '))
-                      message.success('Kics Command copied to clipboard!')
-                    }}>
-                    Copy to clipboard
-                  </Button>
-                </div>
-              </Col>
+          <Row gutter={[16, 8]} className={styles.container}>
+            <Col xs={24}>
+              <h3>Kics Command (Generated Output)</h3>
               <Divider />
-              <Col xs={24}>
-                <span className={styles.actionTitle}><b>Kics Command Only</b> (when kics image has been pulled previously)</span>
-                <div className={styles.actionDiv}>
+            </Col>
+            <Col xs={24}>
+              <span className={styles.actionTitle}>
+                <b>Complete Command</b> (pull latest kics image & run kics scan)
+              </span>
+              <div className={styles.actionDiv}>
+                <TextArea showCount style={{ width: '100%' }} value={result.join(' ')} readOnly />
+                <Button
+                  type="primary"
+                  size="large"
+                  style={{ maxWidth: '15em' }}
+                  icon={<CopyOutlined />}
+                  onClick={() => {
+                    navigator.clipboard.writeText(result.join(' '))
+                    message.success('Kics Command copied to clipboard!')
+                  }}>
+                  Copy to clipboard
+                </Button>
+              </div>
+            </Col>
+            <Divider />
+            <Col xs={24}>
+              <span className={styles.actionTitle}>
+                <b>Kics Command Only</b> (when kics image has been pulled previously)
+              </span>
+              <div className={styles.actionDiv}>
                 <TextArea
                   showCount
-                  autoSize={ {minRows: 2, maxRows: 6 }}
+                  autoSize={{ minRows: 2, maxRows: 6 }}
                   style={{ width: '100%' }}
                   value={result.join(' ').split(' && ')[1]}
                   readOnly
                 />
                 <Button
-                    type="primary"
-                    size="large"
-                    style={{ maxWidth: '15em' }}
-                    icon={<CopyOutlined />}
-                    onClick={() => {
-                      navigator.clipboard.writeText(result.join(' ').split(' && ')[1])
-                      message.success('Kics Command copied to clipboard!')
-                    }}>
-                    Copy to clipboard
-                  </Button>
-                </div>
-              </Col>
-              <Divider />
-              <Col xs={24}>
-                <div className={styles.actionDiv}>
-                  <Button
-                    className={styles.buttonDownload}
-                    type="outline"
-                    icon={<DownloadOutlined />}
-                    size="large"
-                    onClick={() => {
-                      message.loading('Starting download...')
-                    }}>
-                    Download Scan Config
-                  </Button>
-                </div>
-              </Col>
-            </Row>
+                  type="primary"
+                  size="large"
+                  style={{ maxWidth: '15em' }}
+                  icon={<CopyOutlined />}
+                  onClick={() => {
+                    navigator.clipboard.writeText(result.join(' ').split(' && ')[1])
+                    message.success('Kics Command copied to clipboard!')
+                  }}>
+                  Copy to clipboard
+                </Button>
+              </div>
+            </Col>
+            <Divider />
+            <Col xs={24}>
+              <div className={styles.actionDiv}>
+                <Button
+                  className={styles.buttonDownload}
+                  type="outline"
+                  icon={<DownloadOutlined />}
+                  size="large"
+                  onClick={() => {
+                    message.loading('Starting download...')
+                  }}>
+                  Download Scan Config
+                </Button>
+              </div>
+            </Col>
+          </Row>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
             {errorList.map((error, index) => (

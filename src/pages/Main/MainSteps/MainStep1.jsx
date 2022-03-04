@@ -9,9 +9,7 @@ const MainStep1 = () => {
       <Box title="Kics Source">
         <RadioGroup
           flag="source"
-          items={[
-            { label: 'Docker', flag: 'source', flagAux: 'docker', required: true }
-          ]}
+          items={[{ label: 'Docker', flag: 'source', flagAux: 'docker', required: true }]}
         />
       </Box>
       <Box title="Target Scan">
@@ -30,7 +28,9 @@ const MainStep1 = () => {
                   required={true}
                   placeholder={'Add one or more files or folders (complete path)'}
                   label={'Files / Folders'}
-                  description={'Example: c:\\sample.tf (single file)  •  c:\\scans\\project-folder (folder)  •  /home/user/project (folder)'}
+                  description={
+                    'Example: c:\\sample.tf (single file)  •  c:\\scans\\project-folder (folder)  •  /home/user/project (folder)'
+                  }
                 />
               )
             },
