@@ -7,7 +7,7 @@ import lodash from 'lodash'
 const { TextArea } = Input
 const { Panel } = Collapse
 
-const FLAGS_WITH_PATH = ['source', 'path', 'queries-path', 'output-path']
+const FLAGS_WITH_PATH = ['source', 'path', 'queries-path', 'output-path', 'log-path']
 const DOCKER_PATH = '/path'
 
 const MainStepFinish = () => {
@@ -62,6 +62,7 @@ const MainStepFinish = () => {
     sortedData.push(data.find((item) => item.flag === 'path'))
     sortedData.push(data.find((item) => item.flag === 'queries-path'))
     sortedData.push(data.find((item) => item.flag === 'output-path'))
+    sortedData.push(data.find((item) => item.flag === 'log-path'))
     sortedData = sortedData.filter((item) => item)
     sortedData = sortedData.concat(data.filter((item) => !FLAGS_WITH_PATH.includes(item.flag)))
     return sortedData
@@ -70,7 +71,7 @@ const MainStepFinish = () => {
   // This functions replaces "data" (object) properties by applying docker path pattern to necessary flags
   const replacePathFlagsToDockerPattern = (data, commonPath) => {
     const setPathPattern = (path) => path.replace(/[\\]/g, '/')
-    const setDockerPatternToPath = (path) => path.replace(commonPath, DOCKER_PATH)
+    const setDockerPatternToPath = (path) => '"' + path.replace(commonPath, DOCKER_PATH) + '"'
 
     data.forEach((flag) => {
       if (FLAGS_WITH_PATH.includes(flag.flag) && flag.flagAux === 'local') {
@@ -149,7 +150,7 @@ const MainStepFinish = () => {
 
       // 5. Check if the flag is an URL (git)
       if (item.flagAux === 'git') {
-        return kicsOutput.push(`--${item.flag} git::${item.value}`)
+        return kicsOutput.push(`--${item.flag} "git::${item.value}"`)
       }
 
       // 6. Check if the flag is an array or string

@@ -1,85 +1,96 @@
 import Box from '../../../components/Box/Box'
 import RadioGroup from '../../../components/RadioGroup/RadioGroup'
 import Input from '../../../components/Input/Input'
-import CheckGroup from '../../../components/CheckGroup/CheckGroup'
 
-const MainStep4 = () => {
+const MainStep3 = () => {
   return (
     <>
-      <Box title="Exclude Severities">
-        <CheckGroup
-          flag="exclude-severities"
-          items={[
-            { label: 'Info', value: 'info' },
-            { label: 'Low', value: 'low' },
-            { label: 'Medium', value: 'medium' },
-            { label: 'High', value: 'high' }
-          ]}
-        />
-      </Box>
-      <Box title="Include Bill of Materials (BoM)">
+      <Box title="Minimal UI">
         <RadioGroup
-          flag="bom"
-          defaultIndex={1}
-          items={[
-            {
-              label: 'Yes',
-              flag: 'bom',
-              flagAux: 'enable'
-            },
-            { label: 'No', flag: 'bom', flagAux: 'disable' }
-          ]}
-        />
-      </Box>
-      <Box title="Custom Query Timeout">
-        <RadioGroup
-          flag="timeout"
+          flag="minimal-ui"
           defaultIndex={1}
           items={[
             {
               label: 'Enable',
-              flag: 'timeout',
-              flagAux: 'enable',
+              flag: 'minimal-ui',
+              flagAux: 'enable'
+            },
+            { label: 'Disable', flag: 'minimal-ui', flagAux: 'disable' }
+          ]}
+        />
+      </Box>
+      <Box title="No Progress">
+        <RadioGroup
+          flag="no-progress"
+          defaultIndex={1}
+          items={[
+            {
+              label: 'Enable',
+              flag: 'no-progress',
+              flagAux: 'enable'
+            },
+            { label: 'Disable', flag: 'no-progress', flagAux: 'disable' }
+          ]}
+        />
+      </Box>
+      <Box title="Preview Lines">
+        <RadioGroup
+          flag="preview-lines"
+          defaultIndex={1}
+          items={[
+            {
+              label: 'Enable',
+              flag: 'preview-lines',
+              flagAux: null,
               children: (
                 <Input
-                  flag="timeout"
+                  flag="preview-lines"
                   flagAux={null}
-                  placeholder={'number of seconds the query has to execute before being canceled'}
-                  label={'Nº of Seconds'}
-                  description={'Number of seconds the query has to execute before being canceled)'}
-                  defaultValue={'60'}
+                  placeholder={'Number of lines to be display in CLI results (min: 1, max: 30)'}
+                  label={'Nº of Lines'}
+                  description={'Number of lines to be display in CLI results (min: 1, max: 30)'}
+                  defaultValue={'3'}
                 />
               )
             },
-            { label: 'Disable', flag: 'timeout', flagAux: 'disable' }
+            { label: 'Disable', flag: 'preview-lines', flagAux: 'disable' }
           ]}
         />
       </Box>
-      <Box title="Disable Secrets">
+      <Box title="No Color">
         <RadioGroup
-          flag="disable-secrets"
+          flag="no-color"
           defaultIndex={1}
           items={[
             {
-              label: 'Yes',
-              flag: 'disable-secrets',
+              label: 'Enable',
+              flag: 'no-color',
               flagAux: 'enable'
             },
-            { label: 'No', flag: 'disable-secrets', flagAux: 'disable' }
+            { label: 'Disable', flag: 'no-color', flagAux: 'disable' }
           ]}
         />
       </Box>
-      <Box title="Disable Full Description">
+      <Box title="Output Style">
         <RadioGroup
-          flag="disable-full-descriptions"
-          defaultIndex={1}
+          flag="custom-cli-01"
+          defaultIndex={0}
           items={[
             {
-              label: 'Yes',
-              flag: 'disable-full-descriptions',
-              flagAux: 'enable'
+              flag: 'custom-cli-01',
+              flagAux: 'default',
+              label: 'Default'
             },
-            { label: 'No', flag: 'disable-full-descriptions', flagAux: 'disable' }
+            {
+              flag: 'custom-cli-01',
+              flagAux: 'silent',
+              label: 'Silent'
+            },
+            {
+              flag: 'custom-cli-01',
+              flagAux: 'verbose',
+              label: 'Verbose'
+            }
           ]}
         />
       </Box>
@@ -87,4 +98,4 @@ const MainStep4 = () => {
   )
 }
 
-export default MainStep4
+export default MainStep3
