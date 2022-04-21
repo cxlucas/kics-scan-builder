@@ -5,6 +5,7 @@ import MainStep1 from './MainSteps/MainStep1'
 import MainStep2 from './MainSteps/MainStep2'
 import MainStep3 from './MainSteps/MainStep3'
 import MainStep4 from './MainSteps/MainStep4'
+import MainStep5 from './MainSteps/MainStep5'
 import MainStepFinish from './MainSteps/MainStepFinish'
 
 const Main = () => {
@@ -18,12 +19,16 @@ const Main = () => {
       content: <MainStep2 />
     },
     {
-      title: 'Output CLI',
+      title: 'Log Files',
       content: <MainStep3 />
     },
     {
-      title: 'Scan Features',
+      title: 'Output CLI',
       content: <MainStep4 />
+    },
+    {
+      title: 'Scan Features',
+      content: <MainStep5 />
     },
     {
       title: 'Finish',

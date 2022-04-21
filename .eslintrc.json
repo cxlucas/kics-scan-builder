@@ -23,7 +23,8 @@
         "react/react-in-jsx-scope": "off",
         "react/prop-types": "off",
         "semi": ["error", "never"],
-        "prettier/prettier": "warn"
+        "prettier/prettier": "warn",
+        "no-unused-vars": "warn"
     },
     "settings": {
         "react": {

@@ -27,7 +27,12 @@ const RadioGroup = ({ flag, items, defaultIndex = 0 }) => {
     if (item) {
       dispatch({
         type: 'ADD',
-        data: { flag: item.flag, value: '', flagAux: item.flagAux, required: item?.required }
+        data: {
+          flag: item.flag,
+          value: item?.value || '',
+          flagAux: item.flagAux,
+          required: item?.required
+        }
       })
     }
   }

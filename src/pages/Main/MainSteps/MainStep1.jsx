@@ -3,6 +3,9 @@ import RadioGroup from '../../../components/RadioGroup/RadioGroup'
 import Input from '../../../components/Input/Input'
 import SelectMult from '../../../components/SelectMult/SelectMult'
 
+// https://registry.hub.docker.com/v2/repositories/checkmarx/kics/tags?page_size=100
+// https://react-query.tanstack.com/overview
+
 const MainStep1 = () => {
   return (
     <>
