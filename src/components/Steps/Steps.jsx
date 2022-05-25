@@ -29,9 +29,7 @@ const Steps = ({ stepsList }) => {
       </AntSteps>
 
       <div className={styles.container}>
-        <Row gutter={[16, 40]}>
-          {stepsList[current].content}
-        </Row>
+        <Row gutter={[16, 40]}>{stepsList[current].content}</Row>
       </div>
 
       <div className={styles.stepsAction}>

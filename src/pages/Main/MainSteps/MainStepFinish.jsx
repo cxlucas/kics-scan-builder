@@ -2,7 +2,7 @@ import { MainContext } from '../../../context/MainContext'
 import React, { useState, useContext, useEffect } from 'react'
 import styles from './mainstepfinish.module.css'
 import { Row, Col, Divider, Input, Collapse, Button, message } from 'antd'
-import { DownloadOutlined, CopyOutlined } from '@ant-design/icons'
+import { CopyOutlined } from '@ant-design/icons'
 import lodash from 'lodash'
 const { TextArea } = Input
 const { Panel } = Collapse
@@ -221,8 +221,8 @@ const MainStepFinish = () => {
                 </Button>
               </div>
             </Col>
-            { /* TODO: Convert flags to JSON and/or YML and export to file */ }
-            { /* <Divider />
+            {/* TODO: Convert flags to JSON and/or YML and export to file */}
+            {/* <Divider />
               <Col xs={24}>
                 <div className={styles.actionDiv}>
                   <Button
@@ -237,7 +237,7 @@ const MainStepFinish = () => {
                   </Button>
                 </div>
               </Col>
-            */ }
+            */}
           </Row>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>

@@ -40,7 +40,7 @@ const Main = () => {
   return (
     <Row justify="center" className={styles.mainContainer}>
       <Col className="gutter-row" xs={24} sm={24} md={22} lg={20} xl={18} xxl={16}>
-          <Steps stepsList={stepsList} />
+        <Steps stepsList={stepsList} />
       </Col>
     </Row>
   )
