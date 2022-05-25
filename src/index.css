@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family:  Roboto, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Noto Sans', sans-serif, Arial;
+  background-color: #f0f0f0;
+}

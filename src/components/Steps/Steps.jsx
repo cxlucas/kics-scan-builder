@@ -21,7 +21,7 @@ const Steps = ({ stepsList }) => {
   }
 
   return (
-    <>
+    <div className={styles.stepsContainer}>
       <AntSteps current={current} onChange={onChange}>
         {stepsList.map((item) => (
           <Step key={item.title} title={item.title} description={item.description} />
@@ -29,9 +29,7 @@ const Steps = ({ stepsList }) => {
       </AntSteps>
 
       <div className={styles.container}>
-        <Row gutter={[16, 40]} className={styles.container}>
-          {stepsList[current].content}
-        </Row>
+        <Row gutter={[16, 40]}>{stepsList[current].content}</Row>
       </div>
 
       <div className={styles.stepsAction}>
@@ -56,7 +54,7 @@ const Steps = ({ stepsList }) => {
           Finish
         </Button>
       </div>
-    </>
+    </div>
   )
 }
 

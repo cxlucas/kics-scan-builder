@@ -7,6 +7,7 @@ import MainStep3 from './MainSteps/MainStep3'
 import MainStep4 from './MainSteps/MainStep4'
 import MainStep5 from './MainSteps/MainStep5'
 import MainStepFinish from './MainSteps/MainStepFinish'
+import styles from './main.module.css'
 
 const Main = () => {
   const stepsList = [
@@ -37,11 +38,9 @@ const Main = () => {
   ]
 
   return (
-    <Row justify="center">
+    <Row justify="center" className={styles.mainContainer}>
       <Col className="gutter-row" xs={24} sm={24} md={22} lg={20} xl={18} xxl={16}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
-          <Steps stepsList={stepsList} />
-        </div>
+        <Steps stepsList={stepsList} />
       </Col>
     </Row>
   )
