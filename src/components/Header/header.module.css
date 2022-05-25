@@ -5,7 +5,6 @@
 }
 
 .header {
-    background-color: #9C4CF5;
     display: flex;
     gap: 2em;
     align-items: center;
@@ -23,8 +22,16 @@
     color: #fff;
 }
 
+.appLogo {
+    max-height: 48px;
+}
+
 @media screen and (max-width: 600px) {
     .title {
         font-size: x-large;
+    }
+
+    .appLogo {
+        display: none;
     }
 }

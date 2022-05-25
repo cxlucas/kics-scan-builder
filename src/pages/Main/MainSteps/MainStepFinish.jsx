@@ -221,21 +221,23 @@ const MainStepFinish = () => {
                 </Button>
               </div>
             </Col>
-            <Divider />
-            <Col xs={24}>
-              <div className={styles.actionDiv}>
-                <Button
-                  className={styles.buttonDownload}
-                  type="outline"
-                  icon={<DownloadOutlined />}
-                  size="large"
-                  onClick={() => {
-                    message.loading('Starting download...')
-                  }}>
-                  Download Scan Config
-                </Button>
-              </div>
-            </Col>
+            { /* TODO: Convert flags to JSON and/or YML and export to file */ }
+            { /* <Divider />
+              <Col xs={24}>
+                <div className={styles.actionDiv}>
+                  <Button
+                    className={styles.buttonDownload}
+                    type="outline"
+                    icon={<DownloadOutlined />}
+                    size="large"
+                    onClick={() => {
+                      message.loading('Starting download...')
+                    }}>
+                    Download Scan Config
+                  </Button>
+                </div>
+              </Col>
+            */ }
           </Row>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>

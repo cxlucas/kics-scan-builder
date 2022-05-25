@@ -9,7 +9,7 @@ const AppHeader = () => {
   return (
     <Header className={styles.header}>
       <div className={styles.headerDiv}>
-        <img src={logo} className="App-logo" alt="logo" style={{ maxHeight: '48px' }} />
+        <img src={logo} alt="logo" className={styles.appLogo} />
         <span className={styles.title}>Kics Scan Builder</span>
       </div>
       <a
