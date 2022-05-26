@@ -15,5 +15,14 @@
     font-size: x-large;
     font-weight: bold;
     margin-left: 0.2em;
-    margin-bottom: 0.2em;
+}
+
+.titleContainer {
+    display: flex;
+    gap: 0.25em;
+    align-items: center;
+}
+
+.popOver {
+    max-width: 100px;
 }

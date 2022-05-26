@@ -2,6 +2,7 @@ import Box from '../../../components/Box/Box'
 import RadioGroup from '../../../components/RadioGroup/RadioGroup'
 import Input from '../../../components/Input/Input'
 import SelectMult from '../../../components/SelectMult/SelectMult'
+import TipTexts from '../../../utils/TipTexts'
 
 // https://registry.hub.docker.com/v2/repositories/checkmarx/kics/tags?page_size=100
 // https://react-query.tanstack.com/overview
@@ -9,13 +10,13 @@ import SelectMult from '../../../components/SelectMult/SelectMult'
 const MainStep1 = () => {
   return (
     <>
-      <Box title="Kics Source">
+      <Box title="Kics Source" tooltip={TipTexts.mainStep1.kicsSource}>
         <RadioGroup
           flag="source"
           items={[{ label: 'Docker', flag: 'source', flagAux: 'docker', required: true }]}
         />
       </Box>
-      <Box title="Target Scan">
+      <Box title="Target Scan" tooltip={TipTexts.mainStep1.targetScan}>
         <RadioGroup
           flag="path"
           items={[
@@ -57,7 +58,7 @@ const MainStep1 = () => {
         />
       </Box>
 
-      <Box title="Queries Location">
+      <Box title="Queries Location" tooltip={TipTexts.mainStep1.queriesLocation}>
         <RadioGroup
           flag="queries-path"
           items={[
